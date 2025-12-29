@@ -1,0 +1,16 @@
+# Supabase CLI configuration for ofair-make-integration
+# This project shares the same Supabase instance as pro-ofair-app
+
+project_id = "erlfsougrkzbgonumhoa"
+
+[functions.submit-lead-api]
+verify_jwt = false
+
+[functions.create-api-key]
+verify_jwt = false
+
+[functions.list-api-keys]
+verify_jwt = false
+
+[functions.revoke-api-key]
+verify_jwt = false
