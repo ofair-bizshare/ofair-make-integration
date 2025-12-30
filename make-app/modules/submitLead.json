@@ -1,0 +1,7 @@
+{
+  "name": "submitLead",
+  "label": "Submit Lead",
+  "description": "Submit a new lead to Ofair platform",
+  "connection": "apiKey",
+  "type": "action"
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "name": "description",
+    "type": "text",
+    "label": "Description",
+    "help": "Detailed description of the work needed",
+    "required": true,
+    "multiline": true
+  },
+  {
+    "name": "location",
+    "type": "text",
+    "label": "Location",
+    "help": "City or settlement name in Hebrew (e.g., תל אביב)",
+    "required": true
+  },
+  {
+    "name": "profession",
+    "type": "array",
+    "label": "Professions",
+    "help": "Required profession types (e.g., שיפוצים, אינסטלציה)",
+    "required": true,
+    "spec": {
+      "type": "text",
+      "label": "Profession"
+    }
+  },
+  {
+    "name": "client_name",
+    "type": "text",
+    "label": "Client Name",
+    "help": "Full name of the client",
+    "required": true
+  },
+  {
+    "name": "client_phone",
+    "type": "text",
+    "label": "Client Phone",
+    "help": "Israeli phone number (e.g., 0501234567)",
+    "required": true
+  },
+  {
+    "name": "budget",
+    "type": "number",
+    "label": "Budget",
+    "help": "Estimated budget amount in ILS",
+    "required": false
+  },
+  {
+    "name": "includes_vat",
+    "type": "boolean",
+    "label": "Includes VAT",
+    "help": "Whether the budget includes VAT",
+    "required": false,
+    "default": false
+  },
+  {
+    "name": "share_percentage",
+    "type": "number",
+    "label": "Share Percentage",
+    "help": "Revenue share percentage (5-40%, default 10%)",
+    "required": false,
+    "default": 10
+  },
+  {
+    "name": "work_date",
+    "type": "date",
+    "label": "Work Date",
+    "help": "Preferred date for the work",
+    "required": false
+  },
+  {
+    "name": "work_time",
+    "type": "text",
+    "label": "Work Time",
+    "help": "Preferred time (e.g., 09:00)",
+    "required": false
+  },
+  {
+    "name": "work_timeframe",
+    "type": "text",
+    "label": "Work Timeframe",
+    "help": "Urgency level (e.g., מיידי, תוך שבוע)",
+    "required": false
+  },
+  {
+    "name": "constraints",
+    "type": "text",
+    "label": "Constraints",
+    "help": "Any special constraints or notes",
+    "required": false,
+    "multiline": true
+  }
+]

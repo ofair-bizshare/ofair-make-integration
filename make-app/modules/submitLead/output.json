@@ -1,0 +1,17 @@
+[
+  {
+    "name": "success",
+    "type": "boolean",
+    "label": "Success"
+  },
+  {
+    "name": "lead_id",
+    "type": "uuid",
+    "label": "Lead ID"
+  },
+  {
+    "name": "request_id",
+    "type": "uuid",
+    "label": "Request ID"
+  }
+]

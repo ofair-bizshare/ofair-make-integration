@@ -1,0 +1,33 @@
+{
+  "url": "{{connection.baseUrl}}/submit-lead-api",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-API-Key": "{{connection.apiKey}}"
+  },
+  "body": {
+    "description": "{{parameters.description}}",
+    "location": "{{parameters.location}}",
+    "profession": "{{parameters.profession}}",
+    "client_name": "{{parameters.client_name}}",
+    "client_phone": "{{parameters.client_phone}}",
+    "budget": "{{ifempty(parameters.budget, null)}}",
+    "includes_vat": "{{ifempty(parameters.includes_vat, false)}}",
+    "share_percentage": "{{ifempty(parameters.share_percentage, 10)}}",
+    "work_date": "{{ifempty(parameters.work_date, null)}}",
+    "work_time": "{{ifempty(parameters.work_time, null)}}",
+    "work_timeframe": "{{ifempty(parameters.work_timeframe, null)}}",
+    "constraints": "{{ifempty(parameters.constraints, null)}}"
+  },
+  "response": {
+    "output": {
+      "success": "{{body.success}}",
+      "lead_id": "{{body.lead_id}}",
+      "request_id": "{{body.request_id}}"
+    },
+    "error": {
+      "message": "{{body.message}}",
+      "field": "{{body.field}}"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "apiKey",
+    "type": "apikey",
+    "label": "Ofair API Connection",
+    "parameters": [
+      {
+        "name": "apiKey",
+        "type": "text",
+        "label": "API Key",
+        "help": "Your Ofair API key. Get it from the Settings page in your Ofair Professional app.",
+        "required": true
+      },
+      {
+        "name": "baseUrl",
+        "type": "text",
+        "label": "API Base URL",
+        "help": "The Ofair API base URL (leave default for production)",
+        "default": "https://erlfsougrkzbgonumhoa.supabase.co/functions/v1",
+        "required": true
+      }
+    ],
+    "communication": {
+      "url": "{{parameters.baseUrl}}/list-api-keys",
+      "method": "GET",
+      "headers": {
+        "X-API-Key": "{{parameters.apiKey}}"
+      },
+      "response": {
+        "valid": {
+          "condition": "{{body.success}}"
+        },
+        "error": {
+          "message": "{{body.message}}"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "ofair",
+  "label": "Ofair Lead Submission",
+  "version": "1.0.0",
+  "description": "Submit leads to Ofair platform for professional services marketplace",
+  "language": "he",
+  "defaultTimezone": "Asia/Jerusalem"
+}
