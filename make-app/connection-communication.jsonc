@@ -1,0 +1,38 @@
+{
+    // Validation: sends a minimal POST that will pass auth but fail validation
+    // 401 = bad key (connection fails), 400 = key is valid (connection succeeds)
+    "url": "https://erlfsougrkzbgonumhoa.supabase.co/functions/v1/submit-lead-api",
+    "method": "POST",
+    "headers": {
+        "X-API-Key": "{{parameters.apiKey}}",
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "description": "",
+        "location": "",
+        "profession": [],
+        "client_name": "",
+        "client_phone": ""
+    },
+    "response": {
+        "valid": {
+            // 400 = validation error = key was accepted = connection is valid
+            // 401 = auth failed = bad key
+            "condition": "{{statusCode == 400}}"
+        },
+        "error": {
+            "401": {
+                "message": "Invalid API Key. Please verify your key is correct and active."
+            },
+            "429": {
+                "message": "Rate limit exceeded. Please try again later."
+            },
+            "message": "[{{statusCode}}]: {{ifempty(body.message, 'Connection failed')}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.X-API-Key"
+        ]
+    }
+}

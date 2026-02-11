@@ -1,0 +1,10 @@
+[
+    {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "help": "Enter the API Key provided by Ofair. You can generate one in the Ofair Pro app under Settings → API Keys.",
+        "required": true,
+        "editable": true
+    }
+]

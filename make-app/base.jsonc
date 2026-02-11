@@ -1,0 +1,30 @@
+{
+    "baseUrl": "https://erlfsougrkzbgonumhoa.supabase.co/functions/v1",
+    "headers": {
+        "X-API-Key": "{{connection.apiKey}}",
+        "Content-Type": "application/json"
+    },
+    "response": {
+        "valid": {
+            "condition": "{{statusCode >= 200 && statusCode < 300}}"
+        },
+        "error": {
+            "401": {
+                "message": "Authentication failed: {{ifempty(body.message, 'Invalid or expired API key')}}"
+            },
+            "429": {
+                "message": "Rate limit exceeded. Try again in {{body.retry_after}} seconds.",
+                "type": "RateLimitError"
+            },
+            "400": {
+                "message": "{{ifempty(body.message, 'Invalid request data')}}"
+            },
+            "message": "[{{statusCode}}]: {{ifempty(body.message, 'Unknown error')}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.X-API-Key"
+        ]
+    }
+}

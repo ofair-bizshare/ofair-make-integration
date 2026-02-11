@@ -1,0 +1,21 @@
+{
+    "url": "/submit-lead-api",
+    "method": "POST",
+    "body": {
+        "description": "{{parameters.description}}",
+        "location": "{{parameters.location}}",
+        "profession": "{{parameters.profession}}",
+        "client_name": "{{parameters.client_name}}",
+        "client_phone": "{{parameters.client_phone}}",
+        "budget": "{{ifempty(parameters.budget, undefined)}}",
+        "includes_vat": "{{ifempty(parameters.includes_vat, false)}}",
+        "share_percentage": "{{ifempty(parameters.share_percentage, 10)}}",
+        "work_timeframe": "{{ifempty(parameters.work_timeframe, 'מיידי')}}",
+        "work_date": "{{ifempty(parameters.work_date, undefined)}}",
+        "work_time": "{{ifempty(parameters.work_time, undefined)}}",
+        "constraints": "{{ifempty(parameters.constraints, undefined)}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

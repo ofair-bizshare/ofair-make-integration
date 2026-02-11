@@ -1,0 +1,90 @@
+[
+    {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "help": "Describe the work needed. Minimum 10 characters.\nExample: צריך שיפוץ מטבח כולל ארונות וריצוף",
+        "required": true
+    },
+    {
+        "name": "location",
+        "label": "City",
+        "type": "text",
+        "help": "City name in Hebrew.\nExample: תל אביב, חיפה, באר שבע",
+        "required": true
+    },
+    {
+        "name": "profession",
+        "label": "Professions",
+        "type": "array",
+        "spec": {
+            "type": "text",
+            "label": "Profession"
+        },
+        "help": "Type of professional needed (1-5).\nExamples: שיפוצים, אינסטלציה, חשמל, צביעה, ריצוף",
+        "required": true
+    },
+    {
+        "name": "client_name",
+        "label": "Client Name",
+        "type": "text",
+        "help": "Full name of the client.",
+        "required": true
+    },
+    {
+        "name": "client_phone",
+        "label": "Client Phone",
+        "type": "text",
+        "help": "Israeli phone number.\nFormat: 0501234567",
+        "required": true
+    },
+    {
+        "name": "budget",
+        "label": "Budget",
+        "type": "number",
+        "help": "Estimated budget in ILS (optional)."
+    },
+    {
+        "name": "includes_vat",
+        "label": "Budget Includes VAT",
+        "type": "boolean",
+        "help": "Does the budget include VAT (18%)?"
+    },
+    {
+        "name": "share_percentage",
+        "label": "Share Percentage",
+        "type": "number",
+        "help": "Commission percentage (5-40). Default: 10."
+    },
+    {
+        "name": "work_timeframe",
+        "label": "Work Timeframe",
+        "type": "select",
+        "options": [
+            { "label": "מיידי", "value": "מיידי" },
+            { "label": "יומיים הקרובים", "value": "יומיים הקרובים" },
+            { "label": "בשבוע הקרוב", "value": "בשבוע הקרוב" },
+            { "label": "עד חודש", "value": "עד חודש" },
+            { "label": "חודש או יותר", "value": "חודש או יותר" }
+        ],
+        "help": "When does the client need the work done?"
+    },
+    {
+        "name": "work_date",
+        "label": "Work Date",
+        "type": "date",
+        "help": "Specific preferred date (optional). Format: YYYY-MM-DD"
+    },
+    {
+        "name": "work_time",
+        "label": "Work Time",
+        "type": "text",
+        "help": "Preferred time (optional). Format: HH:MM"
+    },
+    {
+        "name": "constraints",
+        "label": "Notes / Constraints",
+        "type": "text",
+        "help": "Additional notes or constraints (optional)."
+    }
+]
